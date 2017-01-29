@@ -69,7 +69,7 @@ io.sockets.on('connection', function(socket){
 
     //Function for emoticon
     function buildMessage(message) {
-      let smiles = Object.keys(SMILES_MAP);
+      var smiles = Object.keys(SMILES_MAP);
       smiles.forEach(smile => message = message.replace(smile, SMILES_MAP[smile]));
       return message;
     }
