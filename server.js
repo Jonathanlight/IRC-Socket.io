@@ -46,10 +46,9 @@ io.sockets.on('connection', function(socket){
 
     //initialisation des objets et data
     socket.on('new user', function(data, callback){
-        if(data in users){
+        if(data in users)
             callback(false);
-        }else{
-
+        else {
             var userNew = data.trim();
             if (userNew.substr(0,6) === "/nick "){
                 callback(true);
@@ -88,17 +87,14 @@ io.sockets.on('connection', function(socket){
                 var name = msg.substring(0, ind);
                 var msg = msg.substring(ind + 1);
 
-                if(name in users){
+                if(name in users)
                     users[name].emit('user', {msg: msg, nick: socket.nickname});
-                }else{
+                else
                     callback('Error please enter a user valide');
-                }
-            }else{
+            } else
                 callback('Error please enter a message valide');
-            }
-        }else{
+        } else
             io.sockets.emit('new message', {msg: msg, nick: socket.nickname});
-        }
         //socket.broadcast.emit('new message', data);
     });
 
