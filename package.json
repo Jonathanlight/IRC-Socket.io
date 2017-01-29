@@ -1,0 +1,29 @@
+//Application package json valide
+{
+  "name": "privatTchat",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node ."
+  },
+  "dependencies": {
+    "socket.io":"1.7.2",
+    "express": "4.14.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "privatTchat",
+  "keywords": [],
+  "maintainers": [],
+  "contributors": [],
+  "bugs": "jonathan.kablan@gmail.com",
+  "licenses": [],
+  "repositories": {
+    "type":"application",
+    "url":"http://localhost:3000"
+    }
+}

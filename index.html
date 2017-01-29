@@ -1,0 +1,429 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Chat</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="http://mdbootstrap.com/download/templates/bootstrap/free/3%20columns%20listing/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="http://mdbootstrap.com/download/templates/bootstrap/free/3%20columns%20listing/css/mdb.min.css" rel="stylesheet">
+    <!-- Template styles -->
+    <style rel="stylesheet">
+        /* TEMPLATE STYLES */
+        
+        main {
+            margin-top: 3rem;
+        }
+        
+        main .card {
+            margin-bottom: 2rem;
+        }
+        #chatroom{
+            height: 500px;
+            width: 100%;
+            overflow-y: auto;
+            border: 1px;
+            position: absolute;
+            left: 12px;
+            top: -17px;
+            background: #eee;
+            box-shadow: 0px 0px 5px 3px #aaa;
+        }
+        #chat{
+            height: 500px;
+            width: 100%;
+            overflow-y: auto;
+            border: 1px;
+        }
+        #contentWrap{
+            display: none;
+        }
+        #chatWrap{
+            float: left;
+            border: 1px;
+            width: 100%;
+        }
+        .error{
+            color: red;
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .read-more {
+                text-align: center;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <!--Navbar-->
+        <nav class="navbar navbar-dark primary-color-dark">
+
+            <!-- Collapse button-->
+            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
+            <i class="fa fa-bars"></i>
+        </button>
+
+            <div class="container">
+                <!--Collapse content-->
+                <div class="collapse navbar-toggleable-xs" id="collapseEx">
+                    <!--Navbar Brand-->
+                    <a class="navbar-brand" href="" target="_blank">ChatCampus</a>
+                    <!--Links-->
+                </div>
+                <!--/.Collapse content-->
+            </div>
+        </nav>
+        <!--/.Navbar-->
+    </header>
+
+    <main>
+        <!--Main layout-->
+        <div class="container">
+
+            <!--Page heading-->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="h1-responsive" id="useronline"> </h1>
+                </div>
+            </div>
+            <!--/.Page heading-->
+            <hr>
+
+            <!--First row-->
+            <div class="row">
+
+            <div class="col-md-2" >
+
+                <div style="border:solid 2px #ccc;border-radius: 10px;" id="list">
+                <h3 id="channel" class="btn btn-default">Channel list</h3>
+                    <md-list-item class='noright'><i class='fa fa-user prefix'></i> roomOne </md-list-item><br/>
+                    <md-list-item class='noright'><i class='fa fa-user prefix'></i> roomTwo </md-list-item><br/>
+                    <md-list-item class='noright'><i class='fa fa-user prefix'></i> roomThree </md-list-item><br/>
+                    <md-list-item class='noright'><i class='fa fa-user prefix'></i> roomFour </md-list-item><br/>
+                </div>
+
+                <!--First column-->
+                <div style="border:solid 2px #ccc;border-radius: 10px;margin-bottom: 10px;margin-top: 10px;">
+                    <img id="icon1" src="https://www.smileysapp.com/emojis/bow-tie-smiley.png" width="50" class="rounded-circle">
+                    <img id="icon2" src="https://www.smileysapp.com/emojis/selfie-emoji.png" width="50"  class="rounded-circle">
+                    <img id="icon3" src="https://www.smileysapp.com/emojis/middle-finger-smiley.png" width="50"  class="rounded-circle">
+                    <img id="icon4" src="https://www.smileysapp.com/emojis/angry-emoji.png" width="50"  class="rounded-circle">
+                    <img id="icon5" src="https://www.smileysapp.com/emojis/cute-wink-smiley.png" width="50"  class="rounded-circle">
+                    <img id="icon6" src="https://www.smileysapp.com/emojis/blowing-a-kiss.png" width="50"  class="rounded-circle">
+                    <img id="icon7" src="https://www.smileysapp.com/emojis/angry-smiley.png" width="50"  class="rounded-circle">
+                    <img id="icon8" src="https://www.smileysapp.com/emojis/teary-eyes-emoji.png" width="50"  class="rounded-circle">
+                    <img id="icon9" src="https://www.smileysapp.com/emojis/smiley-on-laptop.png" width="50"  class="rounded-circle">
+                    <img id="icon12" src="https://www.smileysapp.com/emojis/sleeping-smiley.png" width="50"  class="rounded-circle">
+                    <img id="icon11" src="https://www.smileysapp.com/emojis/stressed-smiley.png" width="50"  class="rounded-circle">
+                </div>
+                <!--/First column-->
+
+                <!--First column-->
+                <div style="border:solid 2px #ccc;border-radius: 10px;">
+                    <img id="gif1" src="http://www.gifbin.com/bin/022014/1394128421_rihanna_dancing.gif" width="50" >
+                    <img id="gif2" src="http://www.gifbin.com/bin/042011/putin-and-a-cute-puppy.gif" width="50"  >
+                    <img id="gif3" src="http://www.gifbin.com/bin/112014/1416241579_girl_drinking_champagne_fail.gif" width="50"  >
+                    <img id="gif4" src="http://www.gifbin.com/bin/092015/roger-rabbit-gets-hit-with-frying-pan-from-behind-the-screen.gif" width="50"  >
+                    <img id="gif5" src="http://www.gifbin.com/bin/082011/1313398002_baby_falls_asleep.gif" width="50"  >
+                    <img id="gif6" src="http://www.gifbin.com/bin/012017/tape-measure-trick.gif" width="50"  >
+                    <img id="gif7" src="http://www.gifbin.com/bin/012015/1420739933_morpheus_parkour_fail.gif" width="50"  >
+                    <img id="gif8" src="http://i.giphy.com/3o7TKr0LU13xOFgl4A.gif" width="50"  >
+                </div>
+                <!--/First column-->
+
+            </div>
+
+            <div class="col-md-7">
+                  
+                  <div class="card-block">
+
+                        <div id="nickWrap">
+                            <p id="nickError"></p>
+                            <form id="setNick">
+                            <div class="md-form">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="text" id="nickname" class="form-control">
+                                <label for="message">Entrez votre prénom</label>
+                            </div>
+
+                            <div class="text-xs-center">
+                                <button type="submit" class="btn btn-default">Ajouter</button>
+                            </div>
+                            </form>
+                        </div>
+
+                        <div id="contentWrap">
+                            <div id="chatWrap">
+                                <div id="chatroom">
+                                    <center><h2>RoomBox</h2> </center>
+
+                                </div>
+                                <div id="chat"></div>
+
+                                <form id="send-message">
+                                <div class="md-form">
+                                    <i class="fa fa-envelope prefix"></i>
+                                    <input type="text" id="message" class="form-control">
+                                </div>
+
+                                <div class="md-form">
+                                    <input type="text" id="youtube" placeholder="url youtube" class="form-control">
+                                </div>
+
+                                <div class="text-xs-center">
+                                    <button type="submit" class="btn btn-default">Envoyer</button>
+                                    <a class="btn btn-default" id="flash"><i class="fa fa-bolt"></i> Flash picture</a>
+                                    <a class="btn btn-default" id="urlYoutube"><i class="fa fa-bolt"></i> url youtube</a>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+
+                <div class="col-md-3">
+                    <div id="my_camera"></div>
+                    <div id="users"></div>
+                </div>
+            </div>
+            <!--/.Second row-->
+
+        </div>
+        <!--/.Main layout-->
+    </main>
+
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only primary-color-dark">
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="containter-fluid">
+                © 2015 Copyright 
+            </div>
+        </div>
+        <!--/.Copyright-->
+    </footer>
+    <!--/.Footer-->
+
+    <!-- SCRIPTS -->
+
+     <!-- JQuery -->
+    <script type="text/javascript" src="http://mdbootstrap.com/download/templates/bootstrap/free/3%20columns%20listing/js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="http://mdbootstrap.com/download/templates/bootstrap/free/3%20columns%20listing/js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="http://mdbootstrap.com/download/templates/bootstrap/free/3%20columns%20listing/js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="http://mdbootstrap.com/download/templates/bootstrap/free/3%20columns%20listing/js/mdb.min.js"></script>
+    <script src="/socket.io/socket.io.js" ></script>
+    <script type="text/javascript" src="http://reparizy.com/icon/webcam.min.js"></script>
+    <script>
+        jQuery(function($){
+
+            //Initialisation de la camera
+            Webcam.set({
+                width: 320,
+                height: 240,
+                image_format: 'jpeg',
+                jpeg_quality: 90
+            });
+            Webcam.attach( '#my_camera' );
+
+            function take_snapshot() {
+               Webcam.snap( function(data_uri) {
+                flashPhotoSong();
+                var image = new Image();
+                image.src = data_uri;
+                var a = document.getElementById("message");
+                a.value = '<img src="'+data_uri+'" />';
+
+                });
+            }
+
+            function urlYoutube() {
+                var box = document.getElementById("message");
+                url = document.getElementById("youtube").value;
+                box.value = '<iframe width="200" height="200" src="'+url+'"></iframe>';
+            }
+
+            var socket = io.connect();
+
+            var $nickForm = $('#setNick');
+            var $nickError = $('#nickError');
+            var $nickBox = $('#nickname');
+            var $users = $('#users');
+            var $messageForm = $('#send-message');
+            var $messageBox = $('#message');
+            var $chat = $('#chat');
+            var $chatroom = $('#chatroom');
+            var $useronline = $('#useronline');
+            var $list = $('#list');
+
+            
+
+            function readAudio(){
+                var myAudio = new Audio("http://reparizy.com/icon/son.mp3");
+                myAudio.play();
+            }
+
+            function flashPhotoSong(){
+                var myAudio = new Audio("http://reparizy.com/icon/shutter.mp3");
+                myAudio.play();
+            }
+
+            $nickForm.submit(function(e){
+                e.preventDefault();
+                socket.emit('new user', $nickBox.val(), function(data){
+                    if (data) {
+                        
+                        $('#nickWrap').hide();
+                        $('#contentWrap').show();
+                    }else{
+                        $nickError.html('The username lock or command not found ');
+                    }
+                });
+
+                var nameU = $nickBox.val();
+                if (nameU.substr(0,6) === "/nick "){
+                    nameU = nameU.substr(6);
+                    console.log( nameU );
+                    $useronline.html("<img src='http://lorempixel.com/50/50/fashion/' style='border-radius:100%;'/> &nbsp; "+ nameU );
+                    $nickBox.val('');
+                }
+            });
+
+            socket.on('usernames', function(data){
+                var html = '';
+
+                for (var i = 0; i < data.length; i++) {
+                    html += "<md-list-item class='noright'><i class='fa fa-user prefix'></i> &nbsp; "+ data[i]+ "</md-list-item><br/>";
+                };
+
+                $users.html(html);
+            });
+
+            $users.hide();
+            $list.hide();
+            $chatroom.hide();
+
+             $messageForm.submit(function(e){
+                e.preventDefault();
+
+                var msgs = $messageBox.val();
+
+                //Listes des users connectés au serveur
+                if (msgs.substr(0,6) === "/users"){
+                    $users.show();
+                }
+
+                //Listes des users connectés au serveur
+                if (msgs.substr(0,5) === "/list"){
+                    $list.show();
+                }
+
+                if(msgs.substr(0,6) === "/join "){
+                    room = msgs.substr(6);
+                    console.log( room );
+                    socket.emit('subscribe', room);
+                }
+
+                if (msgs.substr(0,6) === "/room "){
+                    msgs = msgs.substr(6);
+
+                    console.log('room');
+                    socket.emit('sendroom', { room: "roomOne", message: msgs});
+                }
+
+                //Pour quitter le serveur
+                if (msgs.substr(0,5) === "/part"){
+                    var win = window.open("about:blank", "_self");
+                    win.close();
+                }else{
+
+                    if (msgs.substr(0,6) === "/room "){
+                        msgs = "";
+                         return;
+                    }else{
+                        socket.emit('send message', msgs, function(data){
+                            readAudio();
+                            $chat.append("<p><span class='error'>"+data+"</span></p>");
+                        });
+                        $messageBox.val('');
+                    }
+
+                    
+                }
+
+            });
+
+            //Function for show the time current of conversation
+            function timer(){
+                var timer = new Date().toLocaleString().split(',')[0];
+                return timer;
+            }
+
+             socket.on('message', function (data) {
+                $chatroom.show();
+                console.log(data);  
+                readAudio();
+                console.log( $('#chatroom') );
+                $('#chatroom').append("<p><i>"+timer()+"</i> - <b>"+data.room+" :</b> "+data.message+"</p>");
+             });
+
+            socket.on('new message', function(data){
+                $chatroom.hide();
+                readAudio();
+                $chat.append("<p><i>"+timer()+"</i> - <b>"+data.nick+" :</b> "+data.msg+"</p>");
+            });
+
+            socket.on('user', function(data){
+                $chat.append("<p><i>"+timer()+"</i> <b>"+data.nick+" :</b> "+data.msg+"</p>");
+            });
+
+            //Function for take flash picture
+            $('#flash').click(function(){ take_snapshot(); });
+            //Function for send link youtube en conversation
+            $('#urlYoutube').click(function(){ urlYoutube(); });
+
+            $('#channel').click(function(){ $('#chatroom').toggle(); });
+            
+
+            $('#icon1').click(function(){ var a = document.getElementById("message"); a.value += " _emoti1 "; });
+            $('#icon2').click(function(){ var a = document.getElementById("message"); a.value += " _emoti2 "; });
+            $('#icon3').click(function(){ var a = document.getElementById("message"); a.value += " _emoti3 "; });
+            $('#icon4').click(function(){ var a = document.getElementById("message"); a.value += " _emoti4 "; });
+            $('#icon5').click(function(){ var a = document.getElementById("message"); a.value += " _emoti5 "; });
+            $('#icon6').click(function(){ var a = document.getElementById("message"); a.value += " _emoti6 "; });
+            $('#icon7').click(function(){ var a = document.getElementById("message"); a.value += " _emoti7 "; });
+            $('#icon8').click(function(){ var a = document.getElementById("message"); a.value += " _emoti8 "; });
+            $('#icon9').click(function(){ var a = document.getElementById("message"); a.value += " _emoti9 "; });
+            $('#icon10').click(function(){ var a = document.getElementById("message"); a.value += " _emoti12 "; });
+            $('#icon11').click(function(){ var a = document.getElementById("message"); a.value += " _emoti11 "; });
+
+            $('#gif1').click(function(){ var a = document.getElementById("message"); a.value += " gif1 "; });
+            $('#gif2').click(function(){ var a = document.getElementById("message"); a.value += " gif2 "; });
+            $('#gif3').click(function(){ var a = document.getElementById("message"); a.value += " gif3 "; });
+            $('#gif4').click(function(){ var a = document.getElementById("message"); a.value += " gif4 "; });
+            $('#gif5').click(function(){ var a = document.getElementById("message"); a.value += " gif5 "; });
+            $('#gif6').click(function(){ var a = document.getElementById("message"); a.value += " gif6 "; });
+            $('#gif7').click(function(){ var a = document.getElementById("message"); a.value += " gif7 "; });
+            $('#gif8').click(function(){ var a = document.getElementById("message"); a.value += " gif8 "; });
+        });
+    </script>
+
+</body>
+
+</html>
