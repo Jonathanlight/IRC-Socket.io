@@ -10,9 +10,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
-    <link href="http://mdbootstrap.com/download/templates/bootstrap/free/3%20columns%20listing/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="http://mdbootstrap.com/download/templates/bootstrap/free/3%20columns%20listing/css/mdb.min.css" rel="stylesheet">
+    <link href="public/css/mdb.min.css" rel="stylesheet">
     <!-- Template styles -->
     <style rel="stylesheet">
         /* TEMPLATE STYLES */
@@ -130,9 +130,11 @@
 
                 <!--First column-->
                 <div style="border:solid 2px #ccc;border-radius: 10px;">
-                    <img id="gif1" src="http://www.gifbin.com/bin/022014/1394128421_rihanna_dancing.gif" width="50" >
-                    <img id="gif2" src="http://www.gifbin.com/bin/042011/putin-and-a-cute-puppy.gif" width="50"  >
-                    <img id="gif3" src="http://www.gifbin.com/bin/112014/1416241579_girl_drinking_champagne_fail.gif" width="50"  >
+                    
+
+                    <img id="gif1" src="https://media.giphy.com/media/CaiVJuZGvR8HK/giphy.gif " width="50" >
+                    <img id="gif2" src="https://media.giphy.com/media/8CS9GbhJgFi7K/giphy.gif" width="50"  >
+                    <img id="gif3" src="https://media.giphy.com/media/3rgXBwfKHf4RPiWIh2/giphy.gif" width="50"  >
                     <img id="gif4" src="http://www.gifbin.com/bin/092015/roger-rabbit-gets-hit-with-frying-pan-from-behind-the-screen.gif" width="50"  >
                     <img id="gif5" src="http://www.gifbin.com/bin/082011/1313398002_baby_falls_asleep.gif" width="50"  >
                     <img id="gif6" src="http://www.gifbin.com/bin/012017/tape-measure-trick.gif" width="50"  >
@@ -218,18 +220,18 @@
     <!-- SCRIPTS -->
 
      <!-- JQuery -->
-    <script type="text/javascript" src="http://mdbootstrap.com/download/templates/bootstrap/free/3%20columns%20listing/js/jquery-2.2.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="http://mdbootstrap.com/download/templates/bootstrap/free/3%20columns%20listing/js/tether.min.js"></script>
+    <script src="public/js/tether.min.js"></script>
 
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="http://mdbootstrap.com/download/templates/bootstrap/free/3%20columns%20listing/js/bootstrap.min.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
 
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="http://mdbootstrap.com/download/templates/bootstrap/free/3%20columns%20listing/js/mdb.min.js"></script>
+    <script src="public/js/mdb.min.js"></script>
     <script src="/socket.io/socket.io.js" ></script>
-    <script type="text/javascript" src="http://reparizy.com/icon/webcam.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
     <script>
         jQuery(function($){
 
@@ -275,12 +277,12 @@
             
 
             function readAudio(){
-                var myAudio = new Audio("http://reparizy.com/icon/son.mp3");
+                var myAudio = new Audio("public/son/son.mp3");
                 myAudio.play();
             }
 
             function flashPhotoSong(){
-                var myAudio = new Audio("http://reparizy.com/icon/shutter.mp3");
+                var myAudio = new Audio("public/son/son.mp3");
                 myAudio.play();
             }
 

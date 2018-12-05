@@ -7,11 +7,14 @@ app = express(),
 server = require('http').createServer(app),
 io = require('socket.io').listen(server),
 
+
 //app.use(express.static('')),
 users = {};
 
 //rename port in 3000
 server.listen(3000);
+
+app.use('/public', express.static(__dirname + '/public'));
 
 // function of load chargement template index.html
 app.get('/', function(req, res){
